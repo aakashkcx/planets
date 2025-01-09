@@ -21,13 +21,24 @@ export class Canvas {
 
   rect(x: number, y: number, width: number, height: number, color: string) {
     this.ctx.fillStyle = color;
-    this.ctx.fillRect(x, y, width, height);
+    this.ctx.fillRect(
+      x + this.element.width / 2,
+      y + this.element.height / 2,
+      width,
+      height
+    );
   }
 
   circle(x: number, y: number, radius: number, color: string) {
     this.ctx.fillStyle = color;
     this.ctx.beginPath();
-    this.ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    this.ctx.arc(
+      x + this.element.width / 2,
+      y + this.element.height / 2,
+      radius,
+      0,
+      2 * Math.PI
+    );
     this.ctx.fill();
   }
 }
