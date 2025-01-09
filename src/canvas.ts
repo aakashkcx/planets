@@ -31,3 +31,8 @@ export class Canvas {
     this.ctx.fill();
   }
 }
+
+export type Drawable = {
+  draw(canvas: Canvas): void;
+  update?(): void;
+};
