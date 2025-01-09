@@ -45,5 +45,4 @@ export class Canvas {
 
 export type Drawable = {
   draw(canvas: Canvas): void;
-  update?(): void;
 };
