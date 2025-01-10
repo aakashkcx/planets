@@ -7,12 +7,27 @@ export class Vector {
     this.y = y;
   }
 
+  static fromPolar(magnitude: number, direction: number) {
+    return new Vector(
+      magnitude * Math.cos(direction),
+      magnitude * Math.sin(direction)
+    );
+  }
+
   add(vector: Vector) {
     return new Vector(this.x + vector.x, this.y + vector.y);
   }
 
   subtract(vector: Vector) {
     return new Vector(this.x - vector.x, this.y - vector.y);
+  }
+
+  multiply(scalar: number) {
+    return new Vector(this.x * scalar, this.y * scalar);
+  }
+
+  divide(scalar: number) {
+    return new Vector(this.x / scalar, this.y / scalar);
   }
 
   get direction() {
