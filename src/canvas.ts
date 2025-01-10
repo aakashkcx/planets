@@ -1,3 +1,5 @@
+import { Vector } from "./vector";
+
 export class Canvas {
   element: HTMLCanvasElement;
   ctx: CanvasRenderingContext2D;
@@ -19,7 +21,11 @@ export class Canvas {
     this.ctx.clearRect(0, 0, this.element.width, this.element.height);
   }
 
-  rect(x: number, y: number, width: number, height: number, color: string) {
+  rect(position: Vector, width: number, height: number, color: string) {
+    this.rect2(position.x, position.y, width, height, color);
+  }
+
+  rect2(x: number, y: number, width: number, height: number, color: string) {
     this.ctx.fillStyle = color;
     this.ctx.fillRect(
       x + this.element.width / 2,
@@ -29,7 +35,11 @@ export class Canvas {
     );
   }
 
-  circle(x: number, y: number, radius: number, color: string) {
+  circle(position: Vector, radius: number, color: string) {
+    this.circle2(position.x, position.y, radius, color);
+  }
+
+  circle2(x: number, y: number, radius: number, color: string) {
     this.ctx.fillStyle = color;
     this.ctx.beginPath();
     this.ctx.arc(
