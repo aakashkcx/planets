@@ -44,8 +44,46 @@ const mars = new Body(
   new Vector(0, -1.52368055 * AU), // position
   new Vector(-24.07e3, 0) // velocity
 );
+const jupiter = new Body(
+  "lightsalmon", // color
+  11.209 * RE, // radius
+  317.8 * ME, // mass
+  new Vector(-5.2038 * AU, 0), // position
+  new Vector(0, 13.06e3) // velocity
+);
+const saturn = new Body(
+  "wheat", // color
+  9.449 * RE, // radius
+  95.159 * ME, // mass
+  new Vector(9.5826 * AU, 0), // position
+  new Vector(0, -9.68e3) // velocity
+);
+const uranus = new Body(
+  "aquamarine", // color
+  4.007 * RE, // radius
+  14.536 * ME, // mass
+  new Vector(0, 19.19126 * AU), // position
+  new Vector(6.8e3, 0) // velocity
+);
+const neptune = new Body(
+  "deepskyblue", // color
+  3.883 * RE, // radius
+  17.147 * ME, // mass
+  new Vector(0, -30.07 * AU), // position
+  new Vector(-5.43e3, 0) // velocity
+);
 
-const solarSystem = [sun, mercury, venus, earth, mars];
+const solarSystem = [
+  sun,
+  mercury,
+  venus,
+  earth,
+  mars,
+  jupiter,
+  saturn,
+  uranus,
+  neptune,
+];
 
 function loop() {
   canvas.clear();
