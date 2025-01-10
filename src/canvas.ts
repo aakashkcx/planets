@@ -1,3 +1,4 @@
+import { CANVAS_ZOOM } from "./constants";
 import { Vector } from "./vector";
 
 export class Canvas {
@@ -28,10 +29,10 @@ export class Canvas {
   rect2(x: number, y: number, width: number, height: number, color: string) {
     this.ctx.fillStyle = color;
     this.ctx.fillRect(
-      x + this.element.width / 2,
-      y + this.element.height / 2,
-      width,
-      height
+      CANVAS_ZOOM * x + this.element.width / 2,
+      CANVAS_ZOOM * y + this.element.height / 2,
+      CANVAS_ZOOM * width,
+      CANVAS_ZOOM * height
     );
   }
 
@@ -43,9 +44,9 @@ export class Canvas {
     this.ctx.fillStyle = color;
     this.ctx.beginPath();
     this.ctx.arc(
-      x + this.element.width / 2,
-      y + this.element.height / 2,
-      radius,
+      CANVAS_ZOOM * x + this.element.width / 2,
+      CANVAS_ZOOM * y + this.element.height / 2,
+      CANVAS_ZOOM * radius,
       0,
       2 * Math.PI
     );
