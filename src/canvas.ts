@@ -91,7 +91,7 @@ export class Canvas {
     else if (event.button === 2) this.mouse.right = false;
   }
 
-  click(event: MouseEvent) {}
+  click(_event: MouseEvent) {}
 
   wheel(event: WheelEvent) {
     this.scale *= event.deltaY < 0 ? 1.25 : 0.8;
