@@ -10,7 +10,7 @@ const canvasElement = document.querySelector<HTMLCanvasElement>("canvas")!;
 const canvas = new Canvas(canvasElement);
 
 const sun = new Body(
-  "yellow", // color
+  "gold", // color
   1 * RS, // radius
   1 * MS, // mass
   new Vector(0, 0), // position
@@ -21,24 +21,24 @@ const mercury = new Body(
   0.3829 * RE, // radius
   0.055 * ME, // mass
   new Vector(-0.387098 * AU, 0), // position
-  new Vector(0, +47.36e3) // velocity
+  new Vector(0, 47.36e3) // velocity
 );
 const venus = new Body(
-  "orange", // color
+  "tan", // color
   0.9499 * RE, // radius
   0.815 * ME, // mass
   new Vector(0.723332 * AU, 0), // position
   new Vector(0, -35.02e3) // velocity
 );
 const earth = new Body(
-  "turquoise", // color
+  "aqua", // color
   1 * RE, // radius
   1 * ME, // mass
   new Vector(0, 1 * AU), // position
   new Vector(29.7827e3, 0) // velocity
 );
 const mars = new Body(
-  "red", // color
+  "orangered", // color
   0.533 * RE, // radius
   0.107 * ME, // mass
   new Vector(0, -1.52368055 * AU), // position
