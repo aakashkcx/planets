@@ -9,7 +9,7 @@ export class Canvas {
     this.ctx = this.element.getContext("2d")!;
 
     this.resize();
-    window.addEventListener("resize", this.resize);
+    window.addEventListener("resize", this.resize.bind(this));
   }
 
   resize() {
