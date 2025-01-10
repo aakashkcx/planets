@@ -10,6 +10,12 @@ export const ME = 5.9722e24; // 1 ME = 5.9722 * 10^24 kg
 // Solar Mass, MS
 export const MS = 1.988416e30; // 1 MS = 1.988416 * 10^30 kg
 
+// Earth Radius, RE
+export const RE = 6378.137e3; // 1 RE = 6378.137 * 10^3 m
+
+// Solar Radius, RS
+export const RS = 6.957e8; // 1 RS = 6.957 × 10^8 m
+
 // Distance Scale
 export const DISTANCE_SCALE = 250 / AU; // 250 pixels = 1 AU
 

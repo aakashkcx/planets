@@ -1,6 +1,6 @@
 import { Body } from "./body";
 import { Canvas } from "./canvas";
-import { AU, ME, MS } from "./constants";
+import { AU, ME, MS, RE, RS } from "./constants";
 import { Vector } from "./vector";
 
 import "./style.css";
@@ -11,35 +11,35 @@ const canvas = new Canvas(canvasElement);
 
 const sun = new Body(
   "yellow", // color
-  25, // radius
+  1 * RS, // radius
   1 * MS, // mass
   new Vector(0, 0), // position
   new Vector(0, 0) // velocity
 );
 const mercury = new Body(
   "grey", // color
-  10, // radius
+  0.3829 * RE, // radius
   0.055 * ME, // mass
   new Vector(-0.387098 * AU, 0), // position
   new Vector(0, +47.36e3) // velocity
 );
 const venus = new Body(
   "orange", // color
-  10, // radius
+  0.9499 * RE, // radius
   0.815 * ME, // mass
   new Vector(0.723332 * AU, 0), // position
   new Vector(0, -35.02e3) // velocity
 );
 const earth = new Body(
   "turquoise", // color
-  10, // radius
+  1 * RE, // radius
   1 * ME, // mass
   new Vector(0, 1 * AU), // position
   new Vector(29.7827e3, 0) // velocity
 );
 const mars = new Body(
   "red", // color
-  10, // radius
+  0.533 * RE, // radius
   0.107 * ME, // mass
   new Vector(0, -1.52368055 * AU), // position
   new Vector(-24.07e3, 0) // velocity
