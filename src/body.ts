@@ -1,5 +1,5 @@
 import { Canvas, Drawable } from "./canvas";
-import { DISTANCE_SCALE, TIME_SCALE } from "./constants";
+import { DISTANCE_SCALE, SIZE_LOG_SCALE, TIME_SCALE } from "./constants";
 import { gravity } from "./physics";
 import { Vector } from "./vector";
 
@@ -38,7 +38,7 @@ export class Body implements Drawable {
   draw(canvas: Canvas) {
     canvas.circle(
       this.position.multiply(DISTANCE_SCALE),
-      this.radius,
+      Math.log(this.radius) / Math.log(SIZE_LOG_SCALE),
       this.color
     );
   }

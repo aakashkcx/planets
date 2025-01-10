@@ -19,5 +19,8 @@ export const RS = 6.957e8; // 1 RS = 6.957 × 10^8 m
 // Distance Scale
 export const DISTANCE_SCALE = 250 / AU; // 250 pixels = 1 AU
 
+// Size Logarithmic Scale Base
+export const SIZE_LOG_SCALE = 10;
+
 // Time Scale
 export const TIME_SCALE = 24 * 60 * 60; // 1 day = 1 frame
