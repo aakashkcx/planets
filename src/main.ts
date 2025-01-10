@@ -86,7 +86,7 @@ const solarSystem = [
 ];
 
 function loop() {
-  canvas.clear();
+  if (!canvas.mouse.left) canvas.clear();
   for (const body of solarSystem) {
     body.update(solarSystem);
     body.draw(canvas);
