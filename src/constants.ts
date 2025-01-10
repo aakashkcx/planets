@@ -24,6 +24,3 @@ export const SIZE_LOG_SCALE = 10; // 1 pixel = 10 times increase in size
 
 // Time Scale
 export const TIME_SCALE = 24 * 60 * 60; // 1 day = 1 frame
-
-// Canvas Zoom
-export const CANVAS_ZOOM = 1;

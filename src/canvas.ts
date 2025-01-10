@@ -1,16 +1,21 @@
-import { CANVAS_ZOOM } from "./constants";
 import { Vector } from "./vector";
 
 export class Canvas {
   element: HTMLCanvasElement;
   ctx: CanvasRenderingContext2D;
+  zoom: number;
 
   constructor(element: HTMLCanvasElement) {
     this.element = element;
     this.ctx = this.element.getContext("2d")!;
+    this.zoom = 1;
 
     this.resize();
     window.addEventListener("resize", this.resize.bind(this));
+
+    this.element.addEventListener("wheel", (event: WheelEvent) => {
+      this.zoom *= event.deltaY < 0 ? 1.25 : 0.8;
+    });
   }
 
   resize() {
@@ -29,10 +34,10 @@ export class Canvas {
   rect2(x: number, y: number, width: number, height: number, color: string) {
     this.ctx.fillStyle = color;
     this.ctx.fillRect(
-      CANVAS_ZOOM * x + this.element.width / 2,
-      CANVAS_ZOOM * y + this.element.height / 2,
-      CANVAS_ZOOM * width,
-      CANVAS_ZOOM * height
+      this.zoom * x + this.element.width / 2,
+      this.zoom * y + this.element.height / 2,
+      this.zoom * width,
+      this.zoom * height
     );
   }
 
@@ -44,9 +49,9 @@ export class Canvas {
     this.ctx.fillStyle = color;
     this.ctx.beginPath();
     this.ctx.arc(
-      CANVAS_ZOOM * x + this.element.width / 2,
-      CANVAS_ZOOM * y + this.element.height / 2,
-      CANVAS_ZOOM * radius,
+      this.zoom * x + this.element.width / 2,
+      this.zoom * y + this.element.height / 2,
+      this.zoom * radius,
       0,
       2 * Math.PI
     );
