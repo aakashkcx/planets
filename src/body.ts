@@ -11,14 +11,21 @@ export class Body implements Drawable {
   velocity: Vector;
   acceleration: Vector;
 
-  constructor(
-    color: string,
-    radius: number,
-    mass: number,
+  constructor({
+    color,
+    radius,
+    mass,
     position = new Vector(),
     velocity = new Vector(),
-    acceleration = new Vector()
-  ) {
+    acceleration = new Vector(),
+  }: {
+    color: string;
+    radius: number;
+    mass: number;
+    position?: Vector;
+    velocity?: Vector;
+    acceleration?: Vector;
+  }) {
     this.color = color;
     this.radius = radius;
     this.mass = mass;
@@ -39,7 +46,7 @@ export class Body implements Drawable {
     canvas.circle(
       this.position.multiply(DISTANCE_SCALE),
       Math.log(this.radius) / Math.log(SIZE_LOG_SCALE),
-      this.color
+      this.color,
     );
   }
 }
