@@ -1,5 +1,8 @@
 import { Vector } from "./vector";
 
+const ZOOM_FACTOR = 1.25;
+const DRAG_FACTOR = 0.5;
+
 export type Drawable = {
   draw(canvas: Canvas): void;
 };
@@ -87,7 +90,9 @@ export class Canvas {
   private mousemove(_event: MouseEvent) {
     if (this.mouse.left.down && this.previousTranslate) {
       this.translate = this.previousTranslate.add(
-        this.mouse.position.subtract(this.mouse.left.start),
+        this.mouse.position
+          .subtract(this.mouse.left.start)
+          .multiply(DRAG_FACTOR),
       );
     }
   }
@@ -105,7 +110,7 @@ export class Canvas {
   private click(_event: MouseEvent) {}
 
   private wheel(event: WheelEvent) {
-    this.scale *= event.deltaY < 0 ? 1.25 : 0.8;
+    this.scale *= event.deltaY < 0 ? ZOOM_FACTOR : 1 / ZOOM_FACTOR;
   }
 
   /* ========== Internal Event Listeners ========== */
