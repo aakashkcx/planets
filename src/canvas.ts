@@ -85,15 +85,15 @@ export class Canvas {
   /* ========== Mouse Event Handlers ========== */
 
   private mousemove(_event: MouseEvent) {
-    if (this.mouse.right.down && this.previousTranslate) {
+    if (this.mouse.left.down && this.previousTranslate) {
       this.translate = this.previousTranslate.add(
-        this.mouse.position.subtract(this.mouse.right.start),
+        this.mouse.position.subtract(this.mouse.left.start),
       );
     }
   }
 
   private mousedown(_event: MouseEvent) {
-    if (this.mouse.right.down) {
+    if (this.mouse.left.down) {
       this.previousTranslate = this.translate;
     }
   }
